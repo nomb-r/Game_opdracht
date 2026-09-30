@@ -140,16 +140,103 @@ def hallway():
             choices_number += 1
             print(f"{choices_number}. {item}")
 
-            choice = int(input("Choose a door! (ENTER A NUMBER THOMAS): "))
+            choice = int(input("Choose a door. "))
         
         if choice == 1:
-            pass
+            First_door()
             
         elif choice == 2:
-            pass
+            Second_door()
 
         elif choice == 3:
-            pass
+            Third_door()
+
+
+def First_door():
+    print("===========================================")
+    print("You open the first door.")
+    print("Its a dark room that is faintly lit by candles.")
+    print("The door behind you suddenly locks")
+    print("At the end of the room you see a corpse.")
+    print("The corpse suddenly comes to life")
+    print("===========================================")
+
+
+
+def Second_door():
+    print("you open the second door")
+    print("you walk into the room")
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def credits(): 
     
