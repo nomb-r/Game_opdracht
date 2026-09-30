@@ -93,10 +93,11 @@ def check_desk():
 
 
 
-# def credits(): 
-#     print("===========================================")
-#     print("Made by\n Mohamed Ali\n Thomas van Lingen")
-#     print("===========================================")
+def credits(): 
+    
+    print("===========================================")
+    print("Made by\n Mohamed Ali\n Thomas van Lingen")
+    print("===========================================")
 
 
 main_menu()
