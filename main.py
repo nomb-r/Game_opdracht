@@ -3,7 +3,7 @@ def main_menu():
 
     choices_number = 0
     print("===========================================")
-    print("Choose one of the following options")
+    print("Choose one of the following options.")
     print("===========================================\n")
 
     for item in choices:
@@ -13,15 +13,17 @@ def main_menu():
     choice = int(input("\nMake a choice: "))
 
     if choice == 1:
-        start_room()
+        start_game()
         
-
     elif choice == 2:
-        pass
+        credits()
 
     elif choice == 3:
-        pass
+        exit()
 
+def start_game():
+    start_room()
+    hallway()
 
 def start_room():
     has_key = False
@@ -54,10 +56,13 @@ def start_room():
             has_key = check_box(has_key)
 
         elif choice == 3:
-            open_door(has_key)
+            door_opened = open_door(has_key)
+
+            if door_opened == True:
+                return
 
         elif choice == 4:
-            pass
+            return
 
 
 def check_desk():
@@ -74,25 +79,26 @@ def check_desk():
     else:
         print("You leave the letter alone.")
 
+
 def check_box(has_key):
 
-    print("You walk over to the box")
+    print("You walk over to the box.")
 
     if has_key == True:
         print("The box is empty. You already took the key.")
         return has_key
  
      
-    print("You see a key in the box")
+    print("You see a key in the box.")
 
     choice = input("Do you want to take the key? (yes/no): ")
 
     if choice == "yes":
          has_key = True
-         print("You take the key")
+         print("You take the key.")
 
     else:
-        print("You leave the key in the box")
+        print("You leave the key in the box.")
 
     return has_key
 
@@ -101,26 +107,49 @@ def check_box(has_key):
 
 def open_door(has_key):
 
-    print("You walk to the door")
+    print("You walk to the door.")
 
     choice = input("Do you want to open the door? (yes/no): ")
 
     if choice == "yes" and has_key == True:
-        print("You open the door and enter the hallway")
-    else: 
+        print("You open the door and enter the hallway.")
+        return True
+
+    elif choice == "yes":
         print("You dont have the key, go find it")
+        return False
 
-
+    else:
+        print("You leave the door alone.")
+        return False
 # # Thomas
 
+def hallway():
 
+    print("===========================================")
+    print("You enter the hallway.")
+    print("There are 3 different door that you can choose from.")
+    print("===========================================")
 
+    while True:
 
+        choices = ["First door", "Second door", "Third door", "Exit"]
 
+        
+        for item in choices:
+            choices_number += 1
+            print(f"{choices_number}. {item}")
 
+            choice = int(input("Choose a door! (ENTER A NUMBER THOMAS): "))
+        
+        if choice == 1:
+            pass
+            
+        elif choice == 2:
+            pass
 
-
-
+        elif choice == 3:
+            pass
 
 def credits(): 
     
