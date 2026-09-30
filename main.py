@@ -135,12 +135,14 @@ def hallway():
 
         choices = ["First door", "Second door", "Third door", "Exit"]
 
-        
+        choices_number = 0
+
+    
         for item in choices:
             choices_number += 1
             print(f"{choices_number}. {item}")
 
-            choice = int(input("Choose a door. "))
+            choice = int(input("Choose a door: "))
         
         if choice == 1:
             First_door()
@@ -156,6 +158,7 @@ def First_door():
     print("===========================================")
     print("You open the first door.")
     print("Its a dark room that is faintly lit by candles.")
+    print("You walk into the room")
     print("The door behind you suddenly locks")
     print("At the end of the room you see a corpse.")
     print("The corpse suddenly comes to life")
@@ -164,13 +167,44 @@ def First_door():
 
 
 def Second_door():
-    print("you open the second door")
-    print("you walk into the room")
+    print("You open the second door.")
+    print("You walk into the room.")
+    print("There is writing on the wall.")
+
+    choice = input("Do you want to read the Writing on the wall? (yes/no): ")
     
+    if choice == "yes":
+        print("Sometimes the way forward is backwards.")
+        print("476")
 
+    else:
+        print("You ignore the writing.")
 
-
+def Third_door():
+    print("You open the third door.")
+    print("You walk into the room.")
+    print("At the end of the room is a big door with some sort of lock.")
+        
+    choice = input("Do you want to inspect the lock? (yes/no): ")
     
+    if choice == "yes":
+        print("The lock needs a 3 digit code")
+
+        code = input("enter the code: ")
+
+        if code =="674":
+            print("You hear a click.")
+            print("The lock opens.")
+
+        else:
+            print("the code is incorrect.")
+
+    else:
+        print("You leave the lock alone.")
+        
+
+
+
 
 
 
