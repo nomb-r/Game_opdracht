@@ -51,10 +51,10 @@ def start_room():
             check_desk()
 
         elif choice == 2:
-            pass
+            has_key = check_box(has_key)
 
         elif choice == 3:
-            pass
+            open_door(has_key)
 
         elif choice == 4:
             pass
@@ -74,13 +74,42 @@ def check_desk():
     else:
         print("You leave the letter alone.")
 
-# def check_box():
-#     print("You walk over to the box")
+def check_box(has_key):
+
+    print("You walk over to the box")
+
+    if has_key == True:
+        print("The box is empty. You already took the key.")
+        return has_key
+ 
+     
+    print("You see a key in the box")
+
+    choice = input("Do you want to take the key? (yes/no): ")
+
+    if choice == "yes":
+         has_key = True
+         print("You take the key")
+
+    else:
+        print("You leave the key in the box")
+
+    return has_key
 
 # # Thomas
 
 
-# def open_door():
+def open_door(has_key):
+
+    print("You walk to the door")
+
+    choice = input("Do you want to open the door? (yes/no): ")
+
+    if choice == "yes" and has_key == True:
+        print("You open the door and enter the hallway")
+    else: 
+        print("You dont have the key, go find it")
+
 
 # # Thomas
 
