@@ -6,3 +6,5 @@ def Ghost_knight():
     print("A knight appears!")
     print(f"Ghost Knight's health: {health}")
     print(f"Ghost Knight's damage: {damage}")
+
+    return health, damage

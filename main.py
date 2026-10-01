@@ -1,3 +1,8 @@
+import random
+
+from enemies import Ghost_knight
+from player import get_health, get_damage, take_damage
+
 def main_menu():
     choices = ["Start Game", "Credits", "Exit"]
 
@@ -142,16 +147,16 @@ def hallway():
             choices_number += 1
             print(f"{choices_number}. {item}")
 
-            choice = int(input("Choose a door: "))
+        choice = int(input("Choose a door: "))
         
-            if choice == 1:
-                First_door()
+        if choice == 1:
+            First_door()
                 
-            elif choice == 2:
-                Second_door()
+        elif choice == 2:
+            Second_door()
 
-            elif choice == 3:
-                Third_door()
+        elif choice == 3:
+            Third_door()
 
 
 def First_door():
@@ -165,6 +170,34 @@ def First_door():
     print("===========================================")
 
 
+    knight_health, knight_damage = Ghost_knight()
+
+    while knight_health > 0:
+
+        print(f"Your health: {get_health()}")
+        print(f"Ghost Knight health: {knight_health}")
+
+        print("1. Attack")
+        print("2. Run")
+
+        choice = input("Choose: ")
+
+        if choice == "1":
+            knight_health -= get_damage()
+
+            print("You attack the Ghost Knight!")
+
+            if knight_health <= 0:
+                print("You defeated the Ghost Knight!")
+                break
+
+            take_damage(knight_damage)
+ 
+            print("The Ghost Knight attacks you!")
+
+        elif choice == "2":
+            print("You cannot escape!")
+        
 
 def Second_door():
     print("You open the second door.")
