@@ -144,14 +144,14 @@ def hallway():
 
             choice = int(input("Choose a door: "))
         
-        if choice == 1:
-            First_door()
-            
-        elif choice == 2:
-            Second_door()
+            if choice == 1:
+                First_door()
+                
+            elif choice == 2:
+                Second_door()
 
-        elif choice == 3:
-            Third_door()
+            elif choice == 3:
+                Third_door()
 
 
 def First_door():
