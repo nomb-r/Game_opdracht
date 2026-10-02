@@ -1,6 +1,6 @@
 import random
 
-from enemies import Ghost_knight
+from enemies import Ghost_knight, Mini_boss
 from player import get_health, get_damage, take_damage
 
 def main_menu():
