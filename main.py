@@ -229,6 +229,8 @@ def Third_door():
             print("You hear a click.")
             print("The lock opens.")
 
+            mini_boss()
+
         else:
             print("the code is incorrect.")
 
@@ -236,7 +238,42 @@ def Third_door():
         print("You leave the lock alone.")
         
 
+def mini_boss():
 
+    print("===========================================")
+    print("You enter a large room.")
+    print("The door slams shut behind you.")
+    print("Something is waiting for you...")
+    print("===========================================")
+
+    boss_health, boss_damage = Mini_boss()
+
+    while boss_health > 0:
+
+        print(f"Your health: {get_health()}")
+        print(f"Mini Boss health: {boss_health}")
+
+        print("1. Attack")
+        print("2. Run")
+
+        choice = input("Choose: ")
+
+        if choice == "1":
+            boss_health -= get_damage()
+
+            print("You attack the Mini Boss!")
+
+            if boss_health <= 0:
+                print("You defeated the Mini Boss!")
+                break
+
+            take_damage(boss_damage)
+
+            print("The Mini Boss attacks you!")
+
+        elif choice == "2":
+            print("You cannot escape!")
+            
 
 
 
